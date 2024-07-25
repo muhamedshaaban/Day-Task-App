@@ -37,32 +37,31 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Manage Your \nTask With',
+                    'Manage your \nTask With',
                     style: TextStyle(
-                        wordSpacing: 4,
-                        fontFamily: 'Poppins',
+                        fontFamily: 'PilatExtended',
                         color: Colors.white,
-                        fontSize: 50,
+                        fontSize: 42,
                         height: 1,
                         fontWeight: FontWeight.w700),
                   ),
                   Text(
                     'DayTask',
                     style: TextStyle(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'PilatExtended',
                         color: kButtonsColor,
-                        fontSize: 50,
+                        fontSize: 42,
                         height: 1,
                         fontWeight: FontWeight.w700),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               CustomElevatedButton(
                 buttonColor: kButtonsColor,
                 textColor: Colors.black,

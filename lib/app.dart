@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      initialRoute: '/splash_screen',
+      initialRoute: '/test_screen',
       routes: routes,
       debugShowCheckedModeBanner: false,
     );

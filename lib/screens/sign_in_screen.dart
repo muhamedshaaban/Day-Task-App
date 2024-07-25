@@ -1,5 +1,6 @@
 import 'package:day_task_iti/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../consts/colors.dart';
 import '../widgets/custom_text_form.dart';
 
@@ -28,27 +29,36 @@ class SignInScreen extends StatelessWidget {
               const Text(
                 'Welcome Back!',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontFamily: 'Inter-SemiBold'),
               ),
               const SizedBox(
-                height: 8,
+                height: 6,
               ),
-              const CustomTextFormField(
+              CustomTextFormField(
                 formName: 'Email Address',
                 hintText: 'Enter your email',
-                prefixIcon: Icons.person_pin_outlined,
+                prefixIcon: SvgPicture.asset(
+                  'assets/icons/usertag.svg',
+                  width: 12, // Adjust the width as needed
+                  height: 12, // Adjust the height as needed
+                  color: Colors.white, // Optional: Set the color if needed
+                ),
               ),
               const SizedBox(
                 height: 14,
               ),
-              const CustomTextFormField(
+              CustomTextFormField(
                 isObsecure: true,
                 formName: 'Password',
                 hintText: 'Enter your password',
-                prefixIcon: Icons.lock_outline,
+                prefixIcon: SvgPicture.asset(
+                  'assets/icons/lock1.svg',
+                  width: 12, // Adjust the width as needed
+                  height: 12, // Adjust the height as needed
+                  color: Colors.white, // Optional: Set the color if needed
+                ),
               ),
               const SizedBox(height: 4),
               const InkWell(
@@ -72,7 +82,7 @@ class SignInScreen extends StatelessWidget {
                 textColor: Colors.black,
                 buttonColor: kButtonsColor,
                 iconText: 'Log In',
-                onPressed: () => Navigator.pushNamed(context, '/splash_screen'),
+                onPressed: () => Navigator.pushNamed(context, '/home_screen'),
               ),
               const SizedBox(
                 height: 18,
@@ -104,14 +114,15 @@ class SignInScreen extends StatelessWidget {
               ),
               const SizedBox(height: 18),
               CustomElevatedButton(
-                  textColor: Colors.white,
-                  borderSide: const BorderSide(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-                  buttonColor: Colors.transparent,
-                  onPressed: () {},
-                  iconText: 'Google'),
+                textColor: Colors.white,
+                borderSide: const BorderSide(
+                  color: Colors.white,
+                  width: 2,
+                ),
+                buttonColor: Colors.transparent,
+                onPressed: () {},
+                iconText: 'Google',
+              ),
               const SizedBox(
                 height: 14,
               ),
@@ -119,10 +130,11 @@ class SignInScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Don't hava an account?",
+                    "Don't have an account?",
                     style: TextStyle(
                       color: kTextColor,
                       fontSize: 12,
+                      fontFamily: 'Inter-Regular',
                     ),
                   ),
                   const SizedBox(
@@ -135,9 +147,11 @@ class SignInScreen extends StatelessWidget {
                     child: const Text(
                       "Sign Up",
                       style: TextStyle(
-                          color: kButtonsColor,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500),
+                        color: kButtonsColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Inter-Regular',
+                      ),
                     ),
                   )
                 ],

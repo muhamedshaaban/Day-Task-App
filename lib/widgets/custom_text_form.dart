@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
-    required this.formName,
+    this.formName,
     required this.hintText,
     required this.prefixIcon,
     this.isObsecure,
   });
 
-  final String formName;
+  final String? formName;
   final String hintText;
-  final IconData prefixIcon;
+  final Widget prefixIcon;
   final bool? isObsecure;
 
   @override
@@ -33,13 +33,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.formName,
-          style: const TextStyle(fontSize: 14, color: kTextColor),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
+        if (widget.formName != null) // Show form name only if it's provided
+          Text(
+            widget.formName!,
+            style: const TextStyle(
+                fontSize: 14, color: kTextColor, fontFamily: 'Inter-Regular'),
+          ),
+        if (widget.formName != null) // Add space only if form name is provided
+          const SizedBox(
+            height: 8,
+          ),
         SizedBox(
           height: 45,
           child: TextFormField(
@@ -48,10 +51,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               color: Colors.white,
             ),
             decoration: InputDecoration(
-              prefixIcon: Icon(
-                widget.prefixIcon,
-                color: Colors.white,
-              ),
+              prefixIcon: widget.prefixIcon,
               suffixIcon: widget.isObsecure == true
                   ? IconButton(
                       icon: Icon(

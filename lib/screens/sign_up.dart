@@ -1,5 +1,6 @@
 import 'package:day_task_iti/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../consts/colors.dart';
 import '../widgets/custom_text_form.dart';
@@ -37,27 +38,27 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const CustomTextFormField(
+            CustomTextFormField(
               formName: 'Full Name',
               hintText: 'Enter your full name',
-              prefixIcon: Icons.person_outline_outlined,
+              prefixIcon: SvgPicture.asset('assets/icons/user.svg'),
             ),
             const SizedBox(
               height: 14,
             ),
-            const CustomTextFormField(
+            CustomTextFormField(
               formName: 'Email Address',
               hintText: 'Enter your email',
-              prefixIcon: Icons.person_pin_outlined,
+              prefixIcon: SvgPicture.asset('assets/icons/usertag.svg'),
             ),
             const SizedBox(
               height: 14,
             ),
-            const CustomTextFormField(
+            CustomTextFormField(
               isObsecure: true,
               formName: 'Password',
               hintText: 'Enter your password',
-              prefixIcon: Icons.lock_outline,
+              prefixIcon: SvgPicture.asset('assets/icons/lock1.svg'),
             ),
             Row(
               children: [
@@ -96,7 +97,9 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 18),
             CustomElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home_screen');
+                },
                 iconText: 'Sign Up',
                 buttonColor: kButtonsColor,
                 textColor: Colors.black),
